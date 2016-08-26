@@ -347,6 +347,7 @@ let Tlist_GainFocus_On_ToggleOpen=1
 let Tlist_Highlight_Tag_On_BufEnter=1
 let Tlist_Auto_Highlight_Tag=1
 let Tlist_auto_Update=1
+let Tlist_WinWidth=60
 nmap tt :Tlist<CR>
 
 "====================================================
