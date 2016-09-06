@@ -38,7 +38,9 @@ Plugin 'msanders/snipmate.vim'
 "Plugin 'vimballPlugin'
 Plugin 'vim-utils/vim-man'
 Plugin 'Omnicppcomplete'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky' 
 call vundle#end()
 "-------------------------Vundle-------------------------------------
 
