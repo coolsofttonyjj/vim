@@ -366,6 +366,18 @@ imap <silent><C-A><C-V>	<ESC>:AV<CR>
 map ,,	:FufCoverageFile<CR>
 let g:fuf_coveragefile_globPatterns = ['**/*.h', '**/*.c', '**/*.cpp', '**/*.cc', '**/*.mm', '**/*.m', '**/*.xml', '**/*.py', '**/*.proto', '**/*.gdb']
 
+"map ,, :CtrlP ./<CR>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:40,results:40'
+let g:ctrlp_by_filename = 1
+let g:ctrlp_cache_dir = $HOME.'.cache/ctrlp'
+let g:ctrlp_max_files = 10000
+let g:ctrlp_max_depth = 40
+let g:ctrlp_max_history = &history
+let g:ctrlp_mruf_max = 250
+"let g:ctrlp_lazy_update = 1
 
 
 "====================================================
