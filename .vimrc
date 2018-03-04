@@ -1,23 +1,23 @@
 "-------------------------Vundle-------------------------------------
 set nocompatible              " 去除VI一致性,必须
 filetype off                  " 必须
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 Plugin 'gmarik/vundle' 
-Plugin 'L9'
-Plugin 'FuzzyFinder'
+"Plugin 'L9'
+"Plugin 'FuzzyFinder'
 "Plugin 'nerdcommenter'
 "Plugin 'https://github.com/scrooloose/nerdcommenter.git'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'a.vim'
 "Plugin 'matchparen'
 Plugin 'EdTsft/matchparen'
-Plugin 'vimplugin/project.vim'
+"Plugin 'vimplugin/project.vim'
 "Plugin 'spellfile'
 "Plugin 'zipPlugin'
 "Plugin 'bookmarking'
-Plugin 'dterei/VimBookmarking'
+"Plugin 'dterei/VimBookmarking'
 "Plugin 'getscriptPlugin'
 Plugin 'minibufexpl.vim'
 Plugin 'python_fold'
@@ -363,10 +363,10 @@ nmap <silent><C-A><C-V>	:AV<CR>
 imap <silent><C-A><C-V>	<ESC>:AV<CR>
 
 
-map ,,	:FufCoverageFile<CR>
-let g:fuf_coveragefile_globPatterns = ['**/*.h', '**/*.c', '**/*.cpp', '**/*.cc', '**/*.mm', '**/*.m', '**/*.xml', '**/*.py', '**/*.proto', '**/*.gdb']
+"map ,,	:FufCoverageFile<CR>
+"let g:fuf_coveragefile_globPatterns = ['**/*.h', '**/*.c', '**/*.cpp', '**/*.cc', '**/*.mm', '**/*.m', '**/*.xml', '**/*.py', '**/*.proto', '**/*.gdb']
 
-"map ,, :CtrlP ./<CR>
+map ,, :CtrlP ./<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
