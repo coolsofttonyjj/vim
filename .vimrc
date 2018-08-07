@@ -41,6 +41,7 @@ Plugin 'Omnicppcomplete'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky' 
+Plugin 'yianwillis/vimcdoc'
 call vundle#end()
 "-------------------------Vundle-------------------------------------
 
@@ -70,7 +71,7 @@ colorscheme termcolor
 set termencoding=utf-8
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8
+set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 set fileformats=unix
 set fileformat=unix
 
@@ -303,8 +304,10 @@ imap <silent><F9>	<ESC><F9>
 "imap <silent><C-X><C-J>		<ESC>:cn<CR>
 "nmap <silent><M-J>		:cn<CR>zz
 "nmap <silent><M-K>		:cp<CR>zz
-nmap <silent>j 		:cn<CR>zz
-nmap <silent>k 		:cp<CR>zz
+"nmap <silent>j 		:cn<CR>zz
+"nmap <silent>k 		:cp<CR>zz
+nmap <silent><C-J>		:cn<CR>zz
+nmap <silent><C-K> 		:cp<CR>zz
 
 "nmap<F12>	gg=G
 nmap <C-c>		yaw
@@ -379,6 +382,9 @@ let g:ctrlp_max_history = &history
 let g:ctrlp_mruf_max = 250
 "let g:ctrlp_lazy_update = 1
 
+"vimgdb相关
+run macros/gdb_mappings.vim	
+syntax enable			" enable syntax highlighting
 
 "====================================================
 "	cscope ctag 相关
@@ -399,35 +405,35 @@ if has("cscope")
 	set cst
 
 	"查找光标所在位置的 C 符号（可以跳过注释）
-	nmap <silent><C-@>s :cs find s <C-R>=expend("<cword>")<CR><CR>:copen<CR>
+	nmap <silent><C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>:copen<CR>
 	imap <silent><C-@>s <Esc><C-@>s
 
 	"查找光标所在位置的变量和函数的定义
-	nmap <silent><C-@>g :cs find g <C-R>=expend("<cword>")<CR><CR>:copen<CR>
+	nmap <silent><C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>:copen<CR>
 	imap <silent><C-@>g <Esc><C-@>g
 
 	"查找所有调用了贯标所在位置的变量或函数的地方
-	nmap <silent><C-@>c :cs find c <C-R>=expend("<cword>")<CR><CR>:copen<CR>
+	nmap <silent><C-@>c :cs find c <C-R>=expand("<cword>")<CR><CR>:copen<CR>
 	imap <silent><C-@>c <Esc><C-@>c
 
 	"查找光标所在位置的字符串
-	nmap <silent><C-@>t :cs find t <C-R>=expend("<cword>")<CR><CR>:copen<CR>
+	nmap <silent><C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>:copen<CR>
 	imap <silent><C-@>t <Esc><C-@>t
 
 	"查找光标所在位置的单词 egrep 模式
-	nmap <silent><C-@>e :cs find e <C-R>=expend("<cword>")<CR><CR>:copen<CR>
+	nmap <silent><C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>:copen<CR>
 	imap <silent><C-@>e <Esc><C-@>e
 
 	"查找 本文件
-	nmap <silent><C-@>f :cs find f <C-R>=expend("<cword>")<CR><CR>:copen<CR>
+	nmap <silent><C-@>f :cs find f <C-R>=expand("<cword>")<CR><CR>:copen<CR>
 	imap <silent><C-@>f <Esc><C-@>f
 
 	"查找包含本文件的文件
-	nmap <silent><C-@>i :cs find i <C-R>=expend("<cword>")<CR><CR>:copen<CR>
+	nmap <silent><C-@>i :cs find i <C-R>=expand("<cword>")<CR><CR>:copen<CR>
 	imap <silent><C-@>i <Esc><C-@>i
 
 	"查找本函数调用的函数
-	nmap <silent><C-@>d :cs find d <C-R>=expend("<cword>")<CR><CR>:copen<CR>
+	nmap <silent><C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>:copen<CR>
 	imap <silent><C-@>d <Esc><C-@>d
 
 endif
