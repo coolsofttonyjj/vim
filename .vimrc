@@ -4,7 +4,7 @@ filetype off                  " 必须
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
-Plugin 'gmarik/vundle' 
+Plugin 'VundleVim/Vundle.vim'
 "Plugin 'L9'
 "Plugin 'FuzzyFinder'
 "Plugin 'nerdcommenter'
@@ -245,6 +245,7 @@ imap <silent><F11>			<ESC>:nohl<CR>a
 "nmap <silent><F1>			:call Help()<CR>
 "imap <silent><F1>			<ESC>:call Help()<CR>
 "vmap <silent><F1>			:call Help()<CR>
+nmap <F1>					:%s/\r//g<CR>:w<CR>``
 
 
 nmap K :Man <C-R>=expand("<cword>")<CR><CR>
@@ -255,7 +256,7 @@ set tabpagemax=50
 nmap <F8>	<ESC>:%s/\r\n/\r/g<CR><ESC>:w<CR><ESC>:%s/\r/\r/g<CR><ESC>:w<CR>
 
 "F1 开开当前目录文件
-nmap <F1>			:o .<CR>
+"nmap <F1>			:o .<CR>
 
 "F2 新建buffer 列出当前目录文件
 nmap <F2> :tabnew .<CR>
@@ -278,8 +279,8 @@ map <leader><F5> :NextBookmark<CR>
 
 "F3 Grep 全文搜索相关
 let Grep_Xargs_Options = '-0'	"这行只在mac os x 上适用
-let Grep_Default_Filelist = '*.c *.cpp *.mm *.h'
-nmap <silent><F3> :Rgrep<CR><CR><CR><CR>
+let Grep_Default_Filelist = '*.c *.cpp *.mm *.h *.lua *.i'
+nmap <silent><F3> :Rgrep -w<CR><CR><CR><CR>
 imap <silent><F3> <ESC><F3>
 
 "F4 代码折叠
@@ -375,12 +376,16 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:40,results:40'
 let g:ctrlp_by_filename = 1
-let g:ctrlp_cache_dir = $HOME.'.cache/ctrlp'
-let g:ctrlp_max_files = 10000
-let g:ctrlp_max_depth = 40
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+let g:ctrlp_max_files = 0
+let g:ctrlp_max_depth = 100
 let g:ctrlp_max_history = &history
 let g:ctrlp_mruf_max = 250
+let g:ctrlp_use_caching = 1
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_match_current_file = 1
 "let g:ctrlp_lazy_update = 1
+let g:ctrlp_user_command = 'find %s -type f | grep -v -P "\.lib$|\.obj$|\.tlog$|\.vcxproj|\.pdb$|\.vcproj$|\.idb$|\.ipch$|\.exe$|\.ilk$|/publicOutput/"'
 
 "vimgdb相关
 run macros/gdb_mappings.vim	
@@ -390,6 +395,7 @@ syntax enable			" enable syntax highlighting
 "	cscope ctag 相关
 "====================================================
 
+set tags+=tags;
 set tags+=~/.vim/gcc.tags
 
 if has("cscope")
