@@ -387,6 +387,7 @@ let g:ctrlp_match_current_file = 1
 "let g:ctrlp_lazy_update = 1
 let g:ctrlp_user_command = 'find %s -type f | grep -v -P "\.lib$|\.obj$|\.tlog$|\.vcxproj|\.pdb$|\.vcproj$|\.idb$|\.ipch$|\.exe$|\.ilk$|/publicOutput/"'
 
+
 "vimgdb相关
 run macros/gdb_mappings.vim	
 syntax enable			" enable syntax highlighting
